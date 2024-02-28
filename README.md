@@ -1,2 +1,2 @@
 # Diary
-Diary is a Java application dedicated to the management of personal diaries. The project is designed solely for academic practice.
+Diary è un'applicazione Java dedicata alla gestione di diari personali. Gli utenti possono creare e mantenere multiple registrazioni di diari, arricchendo ciascuna con report dettagliati riguardanti i propri stati d'animo, esperienze e pensieri. L'interfaccia utente intuitiva permette una facile navigazione. Il progetto, principalmente scritto in Java e utilizzando Maven, include funzionalità come la persistenza dei dati, la ricerca e l'esportazione. È progettato esclusivamente per l'esercitazione accademica.
