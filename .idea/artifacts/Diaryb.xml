@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Diaryb">
+    <output-path>$USER_HOME$/Desktop</output-path>
+    <root id="archive" name="Diaryb.jar">
+      <element id="module-output" name="Diary" />
+    </root>
+  </artifact>
+</component>
