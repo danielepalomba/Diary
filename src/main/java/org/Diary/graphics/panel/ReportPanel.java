@@ -30,6 +30,9 @@ public class ReportPanel extends JPanel {
         JButton deleteButton = new JButton("Delete");
         JButton goBackButton = new JButton("Go Back");
         JButton returnHomeButton = new JButton("Home");
+        JButton modifyReport = new JButton("Modify");
+        JButton saveReport = new JButton("Save");
+        saveReport.setVisible(false);
 
         goBackButton.addActionListener(e -> DiaryManagerFrame.cardLayout.show(DiaryManagerFrame.cardsPanel, CardPanelEnum.DIARY_REPORTS_PANEL.getValore()));
 
@@ -40,10 +43,28 @@ public class ReportPanel extends JPanel {
             DiaryManagerFrame.cardLayout.show(DiaryManagerFrame.cardsPanel, CardPanelEnum.DIARY_MANAGER_PANEL.getValore());
         });
 
+        modifyReport.addActionListener(e->{
+            modifyReport.setVisible(false);
+            saveReport.setVisible(true);
+            area.setEditable(true);
+        });
+
+        saveReport.addActionListener(e->{
+            report.setText(area.getText());
+            area.setText(report.getText());
+            area.repaint();
+            area.revalidate();
+            area.setEditable(false);
+            modifyReport.setVisible(true);
+            saveReport.setVisible(false);
+        });
+
         JPanel container = new JPanel();
         container.add(deleteButton);
         container.add(goBackButton);
         container.add(returnHomeButton);
+        container.add(modifyReport);
+        container.add(saveReport);
 
         add(container, BorderLayout.SOUTH);
         add(scrollPane, BorderLayout.CENTER);

@@ -27,6 +27,7 @@ public class FileIO {
             if (!Files.exists(path)) {
                 Files.createFile(path);
                 System.out.println(STR."File created: \{filePath}");
+                return new ArrayList<>();
             }
 
             try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filePath))) {
@@ -45,7 +46,6 @@ public class FileIO {
             long size = Files.size(Path.of(filePath));
             return size == 0;
         } catch (IOException e) {
-            e.printStackTrace();
             return false;
         }
     }

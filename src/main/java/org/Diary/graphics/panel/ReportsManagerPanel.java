@@ -20,9 +20,8 @@ public class ReportsManagerPanel extends JPanel {
 
     public ReportsManagerPanel(Diary diary) {
         init(diary);
-        try (ScheduledExecutorService reloadScheduler = Executors.newSingleThreadScheduledExecutor()) {
-            reloadScheduler.scheduleAtFixedRate(() -> reload(diary), 0, 2, TimeUnit.SECONDS);
-        }
+        ScheduledExecutorService reloadScheduler = Executors.newSingleThreadScheduledExecutor();
+        reloadScheduler.scheduleAtFixedRate(() -> reload(diary), 0, 2, TimeUnit.SECONDS);
     }
 
     private void init(Diary diary) {

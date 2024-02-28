@@ -45,6 +45,7 @@ public class DiaryManagerFrame extends JFrame {
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowOpened(WindowEvent e) {
+
                 if(!FileIO.isFileEmpty()){
                     DiaryManager.setDiaries(FileIO.readDiariesFromFile());
                 }
